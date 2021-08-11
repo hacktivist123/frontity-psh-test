@@ -22,6 +22,3 @@ hooks:
 web:
   commands:
     start: NODE_ENV=production npm run start
-
-# The size of the persistent disk of the application (in MB).
-disk: 1024
