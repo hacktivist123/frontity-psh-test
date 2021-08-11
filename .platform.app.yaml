@@ -1,0 +1,27 @@
+# This file describes an application. You can have multiple applications
+# in the same project.
+#
+# See https://docs.platform.sh/configuration/app.html
+
+# The name of this app. Must be unique within a project.
+name: frontity
+
+# The runtime the application uses.
+type: nodejs:14
+
+build:
+  flavor: none
+
+# The hooks executed at various points in the lifecycle of the application
+hooks:
+  build: |
+    # Install dependencies and build frontity
+    npm i
+    npm run build
+
+web:
+  commands:
+    start: NODE_ENV=production npm run start
+
+# The size of the persistent disk of the application (in MB).
+disk: 1024
